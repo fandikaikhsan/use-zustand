@@ -14,25 +14,31 @@ const AnswerCard: FC = () => {
   }
 
   return (
-    <div className="flex flex-col p-5 gap-4 bg-green-700 text-center">
-      <p className="text-white">User Answer:</p>
-      <p className="text-red-300 text-lg">{answer}</p>
+    <div className="flex flex-col p-5 gap-4 bg-green-900 text-center">
+      <div>
+        <div className="pb-3">
+          <p className="text-white">User Answer:</p>
+          <p className=" text-gray-300">(persistent data)</p>
+        </div>
+        <p className="text-red-500 text-2xl font-bold underline">{answer}</p>
+      </div>
+
       <form
         className="flex flex-col gap-5 items-center"
         onSubmit={handleSubmit}
       >
-        <label className="">
+        <label className="font-bold text-white">
           Answer:
           <input
             type="text"
             value={localAnswer}
             onChange={(event) => setLocalAnswer(event.target.value)}
             name="answer"
-            className="mx-3 border border-gray-400"
+            className="mx-3 border text-black border-gray-400"
           />
         </label>
         <input
-          className="bg-red-700 p-2 text-white rounded-md "
+          className=" bg-blue-500 p-2 text-white rounded-md "
           type="submit"
           value="Submit"
         />
